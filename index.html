@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query App</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+ul {
+  list-style: none;
+}
+
+    .srk{
+        background-color:tomato;
+        font-size: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 8px black;
+    }
+    .srk1{
+        color:black;
+        background-color:gold;
+        font-size: 20px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        letter-spacing: 3px;
+        font-weight: 600;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .vs{
+        background-color:pink;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+        color:black;
+        text-decoration-style: solid;
+        text-shadow: 2px 2px 8px yellowgreen;
+        border-radius:8px;
+        border: 5px solid;
+
+        
+    }
+    form{
+        text-align: center;
+        font-style: italic;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color:black;
+        font-size: 20px;
+    }
+    input{
+            color:black;
+            text-size-adjust: 10px;
+            text-size-adjust: 60%;
+        }
+        .button{
+            background-color: red;
+           
+            width: 30%;
+            border: none;
+            color :white;
+            padding: 8px 15px ;
+            cursor: pointer;
+            text-decoration: none;
+            font-style: oblique;
+            font-size: 16px;
+            text-align: center;
+            
+            
+
+        }
+        .button:hover {
+            background-color: rgb(35, 56, 4);
+        }
+        #form1{
+            background: #f4f4f4;
+        }
+        .bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+.error {
+  background: orangered;
+  color: #fff;
+  padding: 5px;
+  margin: 5px;
+}
+.container {
+  margin: auto;
+  width: 60%;
+  overflow: auto;
+}
+ 
+
+</style>
+<body>
+    <!-- <h1><center><b><i><u>Welcome to SRK Cafe</u></i></b></center></h1> -->
+    <!-- <h2><center><b><i>Book Your Table</i></b></center></h2> -->
+    <marquee class="srk">Welcome to SRK Cafe &#128525</marquee><br><br> 
+    <marquee class="srk1">Book Your Table ^ ^</marquee><br><br>
+    <center>
+        <marquee class="vs" direction="down" width="500" height="100" behavior="alternate" >
+             <marquee class="css4" behavior="alternate">
+               Exciting offers on Valentine's  Special &#128151
+             </marquee>
+            </marquee>
+       </center>
+       <section class="container">
+       <form id="form1" onsubmit="saveToLocalStorage(event)" >
+        <h3>Hurry Up! Book Your Table for Special one </h3>
+        <!-- we have empty div with meassage -->
+        <div class ="msg"></div>     
+        <div>
+            <label for="name">Name: <br></label>
+        <input type="text" id="name" name ="Cname" required style="width: 40%;" onchange="uppercase()"><br>
+        </div>
+        <div>
+            <label for="email">Email_Id: <br></label>
+        <input type="text" id="email" name ="email" required style="width: 40%;" onchange="lowercase()"><br>
+        </div>
+        <div>
+            <label for="contact">Contact No: <br></label>
+        <input type="number" id="contactno" name ="Contactno" required style="width: 40%;"><br>
+        </div>
+        <div> 
+            <label for="time">Schedule Your Booking: <br></label>
+            <input type="time" id="time" name ="time" required style="width: 20%;">
+        </div>
+        <div>
+            <input type="date" id="date" name ="date" required style="width: 20%;"><br>
+        </div>
+        <div>
+            <label for="number">Table Number(1-100): <br></label>
+        <input type="number" id="tableno" name ="table" required style="width: 40%;"><br><br>
+        </div>
+        <input class="button" type="submit" value="Submit" onClick="display()"">
+         <!-- <input class="button" value ="Book Your Table"  value="Submit" onClick="display()" >   -->
+        <!--<input type="button" class="button" value ="Book Your Table" name ="book" value="Submit"  required style="width: 20%;">-->
+
+
+    </form>
+    <ul id="users"></ul>
+</section>
+  
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> 
+    <script src="query_app.js"></script>
+    
+</body>
+</html>
